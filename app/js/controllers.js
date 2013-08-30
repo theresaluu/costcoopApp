@@ -9,7 +9,7 @@ angular.module('costcoop.controllers', []).
 	  	'angularFire', 
 	  	function($scope, angularFire) {
 	  		var url = 'https://costcoop.firebaseio.com/board';
-	  		var promise = angularFire(url, $scope, 'board', {names:[], qtys:[], prices:[], dates:[]});
+	  		var promise = angularFire(url, $scope, 'board', {names:[], qtys:[], prices:[], dates:[], acceptances:[]});
 
 	  		promise.then(function(){
 	  			
@@ -17,7 +17,7 @@ angular.module('costcoop.controllers', []).
 	  	
 
 	  				if($scope.board.names){
-	  					$scope.board.names.push({name:$scope.name, acceptance:false});
+	  					$scope.board.names.push({name:$scope.name});
 	  				}
 
 	  				if($scope.board.qtys){
@@ -30,6 +30,10 @@ angular.module('costcoop.controllers', []).
 
 	  				if($scope.board.dates){
 	  					$scope.board.dates.push();
+	  				}
+
+	  				if($scope.board.acceptances){
+	  					$scope.board.acceptances.push();
 	  				}
 
 	  				$scope.name = '';
