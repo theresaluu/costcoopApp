@@ -1,4 +1,43 @@
 /* app css stylesheet */
+.overall{
+  background-color: #F8F8EE;
+  
+}
+
+.meat{
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo{
+  color: #66FFFF;
+}
+
+.datebx{
+  background-color: #CACAD4;
+  border-style: solid;
+  border-color: black;
+  border-width:3px;
+  padding: 10px;
+  float:left;
+  width:20px;
+  height:16px;
+}
+
+.itemdeets{
+  background-color: #66FFFF;
+  padding-left: 23px;
+  padding-right: 23px;
+  padding-top:2px;
+  float:left;
+  width:130px; 
+}
+
+.populate{
+  width: 120px;
+  float: left;
+}
 
 .menu {
   list-style: none;
