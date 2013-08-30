@@ -8,32 +8,16 @@ angular.module('costcoop.controllers', []).
 	  	'$scope', 
 	  	'angularFire', 
 	  	function($scope, angularFire) {
-	  		var url = 'https://costcoop.firebaseio.com/board';
-	  		var promise = angularFire(url, $scope, 'board', {names:[], qtys:[], prices:[], dates:[], acceptances:[]});
+	  		var url = 'https://costcoop.firebaseio.com/item';
+	  		var promise = angularFire(url, $scope, 'item', {names:[], qtys:[], prices:[], dates:[], acceptances:[]});
 
 	  		promise.then(function(){
 	  			
 	  			$scope.postItem = function(){
 	  	
 
-	  				if($scope.board.names){
-	  					$scope.board.names.push({name:$scope.name});
-	  				}
-
-	  				if($scope.board.qtys){
-	  					$scope.board.qtys.push();
-	  				}
-
-	  				if($scope.board.prices){
-	  					$scope.board.prices.push();
-	  				}
-
-	  				if($scope.board.dates){
-	  					$scope.board.dates.push();
-	  				}
-
-	  				if($scope.board.acceptances){
-	  					$scope.board.acceptances.push();
+	  				if($scope.item.names){
+	  					$scope.item.names.push({name:$scope.name, qty:$scope.qty, price:$scope.price, date:$scope.date, acceptance: false});
 	  				}
 
 	  				$scope.name = '';
