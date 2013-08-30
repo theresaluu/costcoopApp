@@ -8,20 +8,14 @@
   <link rel="stylesheet" href="css/normalize.css">
 </head>
 <body class="overall">
-  <div class="meat span-6 offset-3">
+  <div>
     <h1>Cost<span class="logo">coOp</span></h1>
     <div data-ng-controller= "ItemCtrl"> 
       <ul>
         <li>
-          <div class="datebx" data-ng-repeat="dates in board">
-            <span >{{board.dates}}</span>
-          </div>
-          <div class="itemdeets" data-ng-repeat="names in board" data-ng-repeat="qtys in board" data-ng-repeat="prices in board">
+          <div class="itemdeets" data-ng-repeat="names in item">
             <div>
-              <span>{{board.names}}</span>
-              <span>{{"qty:" + board.qtys}}</span>
-            </div>
-            <div>{{"$"+ board.prices}}</div>
+              <span>{{item.names}}</span>
           </div>
         </li>
       </ul>

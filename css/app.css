@@ -20,9 +20,6 @@
   border-color: black;
   border-width:3px;
   padding: 10px;
-  float:left;
-  width:20px;
-  height:16px;
 }
 
 .itemdeets{
@@ -30,8 +27,6 @@
   padding-left: 23px;
   padding-right: 23px;
   padding-top:2px;
-  float:left;
-  width:130px; 
 }
 
 .populate{
