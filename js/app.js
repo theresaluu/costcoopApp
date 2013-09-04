@@ -20,7 +20,8 @@
 angular.module('costcoop', 
 	[
 	'firebase',
-	'costcoop.controllers'
+	'costcoop.controllers',
+	'ngCookies'
 	]
 	);
  
