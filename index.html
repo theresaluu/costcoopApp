@@ -12,7 +12,7 @@
   <div data-ng-controller= "ItemCtrl"> 
     <div class="span12">
       <ul>
-        <li id="avail" class="itemdeets" data-ng-repeat="item in items" ng-click="item.divied = true" ng-init="item.divied = false">
+        <li id="avail" class="itemdeets" data-ng-repeat="item in items" ng-click="acceptItem()">
           <div> Buy Date: {{item.date}}</div>
           <div> Item: {{item.name}}</div>
           <div> Price: ${{item.price}}</div>
@@ -53,7 +53,7 @@
       </div>
     </div>
   </div>
-  <div id="test" title="Dialog Test Title" style="display:none"> bla bla bla</div>
+  <div id="test" title="Dialog Test Title" style="display:none" > bla bla bla</div>
   
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   <script src="lib/angular/angular.js"></script>
