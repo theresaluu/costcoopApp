@@ -7,35 +7,56 @@
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/normalize.css">
 </head>
-<body class="overall">
-  <div>
-    <h1>Cost<span class="logo">coOp</span></h1>
-    <div data-ng-controller= "ItemCtrl"> 
+<body class="overall row-fluid">
+  <h1>Cost<span class="logo">coOp</span></h1>
+  <div data-ng-controller= "ItemCtrl"> 
+    <div class="span12">
       <ul>
         <li>
-          <div class="itemdeets" data-ng-repeat="names in item">
-            <div>{{item.names}}</div>
+          <div id="avail" class="itemdeets" data-ng-repeat="item in items" ng-click="item.divied = true" ng-init="item.divied = false">
+            <div ng-repeat="(key,val) in item"> {{key}}: {{val}} </div>
+          </div>
         </li>
       </ul>
-      
-      <div class="populate">
-        <form class="form-inline">
-          Item: 
-          <input type="text" ng-model="name"/><br />
-          Price:
-          <input type="text" ng-model="price"/><br />
-          Qty:
-          <input type="text" ng-model="qty"/><br />
-          Date: 
-          <input type="date" ng-model="date"/><br />
+    </div>
 
-          <button type= "submit" data-ng-click="postItem()">SAVE</button>
+    <div class="populate row-fluid">
+      <div class="span10">
+        <form class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label" for "text"> Item: </label>
+            <div class="controls">
+              <input type="text" ng-model="name"/><br />
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for "text"> Price: </label>
+            <div class="controls">
+              <input type="text" ng-model="price"/><br />
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for "text"> Qty: </label>
+            <div class="controls">
+              <input type="text" ng-model="qty"/><br />
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for "text"> Buy Date: </label>
+            <div class="controls">
+              <input type="date" ng-model="date"/><br />
+            </div>
+            <button type= "submit" data-ng-click="postItem()">SAVE</button>
+          </div>
         </form>
       </div>
     </div>
   </div>
+  <div id="test" title="Dialog Test Title" style="display:none"> bla bla bla</div>
+  
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-cookies.js"></script>
   <script src="https://cdn.firebase.com/v0/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/0.2.0/angularfire.min.js"></script>
   <script src="js/app.js"></script>
