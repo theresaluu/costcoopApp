@@ -27,11 +27,21 @@
   padding-left: 23px;
   padding-right: 23px;
   padding-top:2px;
+  margin-bottom:10px;
+  width: 50%;
 }
 
 .populate{
-  width: 120px;
-  float: left;
+  width: 60%;
+  float: auto;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+#avail{
+
 }
 
 .menu {
