@@ -12,10 +12,11 @@
   <div data-ng-controller= "ItemCtrl"> 
     <div class="span12">
       <ul>
-        <li>
-          <div id="avail" class="itemdeets" data-ng-repeat="item in items" ng-click="item.divied = true" ng-init="item.divied = false">
-            <div ng-repeat="(key,val) in item"> {{key}}: {{val}} </div>
-          </div>
+        <li id="avail" class="itemdeets" data-ng-repeat="item in items" ng-click="item.divied = true" ng-init="item.divied = false">
+          <div> Buy Date: {{item.date}}</div>
+          <div> Item: {{item.name}}</div>
+          <div> Price: ${{item.price}}</div>
+          <div> Qty: {{item.qty}}</div>
         </li>
       </ul>
     </div>
