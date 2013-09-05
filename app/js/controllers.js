@@ -11,7 +11,6 @@ angular.module('costcoop.controllers', []).
 	  	function($scope, angularFire, $cookies) {
 	  		var url = 'https://costcoop.firebaseio.com/items';
 	  		var promise = angularFire(url, $scope, 'items', []);
-	 
 
 	  		promise.then(function(){
 	  			$scope.showMe = false;
@@ -20,12 +19,13 @@ angular.module('costcoop.controllers', []).
 
 	  			$scope.postItem = function(){
 	  				 if($scope.items){
-	  					$scope.items.push({name:$scope.name, qty:$scope.qty, price:$scope.price, date:$scope.date});
+	  					$scope.items.push({item:$scope.name, qty:$scope.qty, price:$scope.price, date:$scope.date, poster:$scope.poster});
 	  				 }
 	  				$scope.name = '';
 		  			$scope.qty = '';
 		  			$scope.price = '';
 		  			$scope.date = '';
+		  			$scope.poster = '';
 		  		}
 
 		  		$scope.toggle = function(){

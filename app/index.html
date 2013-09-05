@@ -14,9 +14,10 @@
       <ul>
         <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in items">
           <div> Buy Date: {{item.date}}</div>
-          <div> Item: {{item.name}}</div>
+          <div> Item: {{item.item}}</div>
           <div> Price: ${{item.price}}</div>
           <div> Qty: {{item.qty}}</div>
+          <div> Poster: {{item.poster}}</div>
           <button ng-show="!item.divied" ng-click="toggle()"> {{divyMessage}} </button>
           <form ng-show="showMe"> 
             <div> Acceptor: 
@@ -43,22 +44,28 @@
           <div class="control-group">
             <label class="control-label" for "text"> Price: </label>
             <div class="controls">
-              <input type="text" ng-model="price"/><br />
+              <input type="text" ng-model="price"/><br/>
             </div>
           </div>
           <div class="control-group">
             <label class="control-label" for "text"> Qty: </label>
             <div class="controls">
-              <input type="text" ng-model="qty"/><br />
+              <input type="text" ng-model="qty"/><br/>
             </div>
           </div>
           <div class="control-group">
-            <label class="control-label" for "text"> Buy Date: </label>
-            <div class="controls">
-              <input type="date" ng-model="date"/><br />
+            <label class="control-label" for "date"> Buy Date: </label>
+            <div class="control">
+              <input type="date" ng-model="date"/><br/>
             </div>
-            <button type= "submit" data-ng-click="postItem()">SAVE</button>
           </div>
+          <div class="control-group">
+            <label class="control-label" for "text"> Poster: </label>
+            <div class="controls">
+              <input type="text" ng-model="poster"/><br/>
+            </div>
+          </div>
+          <button type= "submit" data-ng-click="postItem()">SAVE</button>
         </form>
       </div>
     </div>
