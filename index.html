@@ -12,12 +12,12 @@
   <div data-ng-controller= "ItemCtrl"> 
     <div class="span12">
       <ul>
-        <li id="avail" class="itemdeets" data-ng-repeat="item in items" >
+        <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in items">
           <div> Buy Date: {{item.date}}</div>
           <div> Item: {{item.name}}</div>
           <div> Price: ${{item.price}}</div>
           <div> Qty: {{item.qty}}</div>
-          <button ng-click="toggle()"> Divy Accept </button>
+          <button ng-show="!item.divied" ng-click="toggle()"> {{divyMessage}} </button>
           <form ng-show="showMe"> 
             <div> Acceptor: 
               <input type="text" ng-model="acceptor"/> </br>
