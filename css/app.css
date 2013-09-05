@@ -1,7 +1,7 @@
 /* app css stylesheet */
 .overall{
-  background-color: #F8F8EE;
-  
+  background-color: #07499D;
+  color: #002C45;
 }
 
 .meat{
@@ -11,7 +11,7 @@
 }
 
 .logo{
-  color: #66FFFF;
+  color: #A92938;
 }
 
 .datebx{
@@ -23,7 +23,7 @@
 }
 
 .itemdeets{
-  background-color: #66FFFF;
+  background-color: #A92938;
   padding-left: 23px;
   padding-right: 23px;
   padding-top:2px;
@@ -32,7 +32,7 @@
 }
 
 .itemAccept-true{
-  background-color: orange;
+  background-color: #875651;
 }
 
 .populate{
