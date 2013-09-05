@@ -36,7 +36,11 @@ angular.module('costcoop.controllers', []).
 		  			this.phone = "";
 		  			this.acceptor = "";
 		  			this.toggle();
+		  	
+		  		}
 
+		  		$scope.notify = function() {
+		  			//once there is a phone number, notify the owner with the number of the accepter
 		  		}
 
 	  		});

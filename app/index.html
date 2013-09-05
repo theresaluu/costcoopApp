@@ -17,13 +17,16 @@
           <div> Item: {{item.name}}</div>
           <div> Price: ${{item.price}}</div>
           <div> Qty: {{item.qty}}</div>
-          <button ng-click="toggle()" > Divy Accept </button>
+          <button ng-click="toggle()"> Divy Accept </button>
           <form ng-show="showMe"> 
-            <div> Acceptor: <input type="text" ng-model="acceptor"/>  <br/> </div>
-            <div> Phone: <input type="text" ng-model="phone"/> <br/> </div>
-          
-          <button ng-click="acceptItem()" > Add Number </button>
-        </form>
+            <div> Acceptor: 
+              <input type="text" ng-model="acceptor"/> </br>
+            </div>
+            <div> Phone:
+              <input type="text" ng-model="phone"/> <br/>
+            </div>
+            <button ng-click="acceptItem()"> Add Number </button>
+          </form>
         </li>
       </ul>
     </div>
