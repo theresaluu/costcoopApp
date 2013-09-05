@@ -3,7 +3,7 @@
 /* Controllers */
 
 
-angular.module('costcoop.controllers', []).
+angular.module('costcoop.controllers', ["ngAnimate"]).
 	controller('ItemCtrl', [
 	  	'$scope', 
 	  	'angularFire', 
