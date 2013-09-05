@@ -14,26 +14,29 @@ angular.module('costcoop.controllers', []).
 	 
 
 	  		promise.then(function(){
-	  			
-	  			$scope.postItem = function(){
-	  			
+	  			$scope.showMe = false;
 
+	  			$scope.postItem = function(){
 	  				 if($scope.items){
 	  					$scope.items.push({name:$scope.name, qty:$scope.qty, price:$scope.price, date:$scope.date});
 	  				 }
-
 	  				$scope.name = '';
 		  			$scope.qty = '';
 		  			$scope.price = '';
 		  			$scope.date = '';
 		  		}
 
+		  		$scope.toggle = function(){
+		  			this.showMe = !this.showMe;
+		  		}
+
 		  		$scope.acceptItem = function(){
-		  			//the accepting thing here
-		  			$("#avail").click(function(){
-		  				$('#test').dialog();
-		  				return false;
-		  			});
+		  			this.item.divied = true;
+		  			this.item.buddy = this.item.buddy || [{acceptor: this.acceptor, phone: this.phone}];
+		  			this.phone = "";
+		  			this.acceptor = "";
+		  			this.toggle();
+
 		  		}
 
 	  		});
