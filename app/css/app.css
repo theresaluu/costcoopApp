@@ -31,6 +31,10 @@
   width: 50%;
 }
 
+.itemAccept-true{
+  background-color: orange;
+}
+
 .populate{
   width: 60%;
   float: auto;

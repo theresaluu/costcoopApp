@@ -3,7 +3,7 @@
 /* Controllers */
 
 
-angular.module('costcoop.controllers', ["ngAnimate"]).
+angular.module('costcoop.controllers', []).
 	controller('ItemCtrl', [
 	  	'$scope', 
 	  	'angularFire', 
@@ -15,6 +15,8 @@ angular.module('costcoop.controllers', ["ngAnimate"]).
 
 	  		promise.then(function(){
 	  			$scope.showMe = false;
+	  			$scope.divyAccept = true;
+	  			$scope.divyMessage = "Divy Accept";
 
 	  			$scope.postItem = function(){
 	  				 if($scope.items){
@@ -28,6 +30,10 @@ angular.module('costcoop.controllers', ["ngAnimate"]).
 
 		  		$scope.toggle = function(){
 		  			this.showMe = !this.showMe;
+		  			if(this.showMe){
+		  				this.divyMessage = "Cancel Divy";
+		  			} else {this.divyMessage = "Divy Accept"}
+		  			
 		  		}
 
 		  		$scope.acceptItem = function(){
@@ -36,6 +42,7 @@ angular.module('costcoop.controllers', ["ngAnimate"]).
 		  			this.phone = "";
 		  			this.acceptor = "";
 		  			this.toggle();
+		  			this.divyAccept = false;
 		  	
 		  		}
 
