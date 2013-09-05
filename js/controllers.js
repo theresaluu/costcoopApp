@@ -32,17 +32,10 @@ angular.module('costcoop.controllers', []).
 
 		  		$scope.acceptItem = function(){
 		  			this.item.divied = true;
-		  			this.item.phone = this.item.phone || [];
-		  			this.item.phone.push(this.phone);
-		  			this.item.acceptor = this.item.acceptor || [];
-		  			this.item.acceptor.push(this.acceptor);
+		  			this.item.buddy = this.item.buddy || [{acceptor: this.acceptor, phone: this.phone}];
 		  			this.phone = "";
 		  			this.acceptor = "";
 		  			this.toggle();
-		  		}
-
-		  		$scope.notify = function() {
-		  			//once there is a phone number, notify the owner with the number of the accepter
 		  		}
 
 	  		});
