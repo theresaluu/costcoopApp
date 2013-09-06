@@ -40,6 +40,12 @@
   float: auto;
 }
 
+.checkyoself{
+  background-color: #000002;
+  color: #A92938;
+  padding-bottom: 10px;
+}
+
 ul, li {
   list-style-type: none;
 }

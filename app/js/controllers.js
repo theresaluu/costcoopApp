@@ -9,24 +9,56 @@ angular.module('costcoop.controllers', []).
 	  	'angularFire', 
 	  	'$cookies',
 	  	function($scope, angularFire, $cookies) {
+
+	  		function log(something){
+	  			console.log(something)
+	  		}
 	  		var url = 'https://costcoop.firebaseio.com/items';
 	  		var promise = angularFire(url, $scope, 'items', []);
+	  		var id = Math.floor((1+Math.random()) * 0x10000);
 
+	  		$cookies.myCookie = $cookies.myCookie || "superCookie" + Math.floor(Math.random()*10000)
+
+	  		console.log($cookies.myCookie)
+	  		
 	  		promise.then(function(){
 	  			$scope.showMe = false;
 	  			$scope.divyAccept = true;
 	  			$scope.divyMessage = "Divy Accept";
-
 	  			$scope.postItem = function(){
 	  				 if($scope.items){
-	  					$scope.items.push({item:$scope.name, qty:$scope.qty, price:$scope.price, date:$scope.date, poster:$scope.poster});
+	  					$scope.items.push({item:$scope.name, 
+	  										qty:$scope.qty,
+	  										price:$scope.price, 
+	  										date:$scope.date, 
+	  										poster: $scope.posterName,
+	  										passPhrase: $scope.posterPassPhrase,
+	  										currentCookie: $cookies.myCookie
+	  										});
 	  				 }
+	  				console.log(this.id);
 	  				$scope.name = '';
 		  			$scope.qty = '';
 		  			$scope.price = '';
 		  			$scope.date = '';
-		  			$scope.poster = '';
+		  			$scope.posterPassPhrase ="";
+		  			$scope.posterName = "";
 		  		}
+
+		  		$scope.currentUser = function(items){
+		  			var list = [];
+		  		 	$scope.items.forEach(function(item){
+		  		 		
+		  		 		if(item.currentCookie == $cookies.myCookie){
+		  		 			list.push(item)
+		  		 		}
+
+		  		 	})
+		  			return list;
+		  		}
+
+
+	  			$scope.currentItems = $scope.currentUser($scope.items)
 
 		  		$scope.toggle = function(){
 		  			this.showMe = !this.showMe;
@@ -48,6 +80,9 @@ angular.module('costcoop.controllers', []).
 
 		  		$scope.notify = function() {
 		  			//once there is a phone number, notify the owner with the number of the accepter
+		  			//if user id == item.poster.id, then render acceptor's name and number
+
+
 		  		}
 
 	  		});

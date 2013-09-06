@@ -2,7 +2,26 @@
 <html lang="en" data-ng-app="costcoop">
 <head>
   <meta charset="utf-8">
-  <title>CostcoOp</title>
+  <div class="checkyoself span12">
+    <div class="row">
+      <h1>CostcoOp</h1>
+      Are you a returning user? Let's see if your posts have been accepted!
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for "text"> Username: </label>
+          <div class="controls">
+            <input type="text" ng-model= "username"/><br/>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for "passphrase"> Passphrase: </label>
+          <div class="controls">
+            <input type="password" ng-model= "passphrase"/><br/>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
   <link rel="stylesheet" href="css/app.css"/>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/normalize.css">
@@ -11,8 +30,10 @@
   <h1>Cost<span class="logo">coOp</span></h1>
   <div data-ng-controller= "ItemCtrl"> 
     <div class="span12">
+      
+
       <ul>
-        <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in items">
+        <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in currentItems">
           <div> Buy Date: {{item.date}}</div>
           <div> Item: {{item.item}}</div>
           <div> Price: ${{item.price}}</div>
@@ -35,7 +56,7 @@
     <div class="populate row-fluid">
       <div class="span10">
         <form class="form-horizontal">
-          <div class="control-group">
+          <div class="control-group"> New Users Post Here!
             <label class="control-label" for "text"> Item: </label>
             <div class="controls">
               <input type="text" ng-model="name"/><br />
@@ -62,7 +83,13 @@
           <div class="control-group">
             <label class="control-label" for "text"> Poster: </label>
             <div class="controls">
-              <input type="text" ng-model="poster"/><br/>
+              <input type="text" ng-model="posterName"/><br/>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for "text"> Passphrase (just for later): </label>
+            <div class="controls">
+              <input type="text" ng-model="posterPassPhrase"/><br/>
             </div>
           </div>
           <button type= "submit" data-ng-click="postItem()">SAVE</button>
