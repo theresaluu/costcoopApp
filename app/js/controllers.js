@@ -20,11 +20,12 @@ angular.module('costcoop.controllers', []).
 	  		$cookies.myCookie = $cookies.myCookie || "superCookie" + Math.floor(Math.random()*10000)
 
 	  		console.log($cookies.myCookie)
-	  		
+
 	  		promise.then(function(){
 	  			$scope.showMe = false;
 	  			$scope.divyAccept = true;
 	  			$scope.divyMessage = "Divy Accept";
+
 	  			$scope.postItem = function(){
 	  				 if($scope.items){
 	  					$scope.items.push({item:$scope.name, 
@@ -46,19 +47,18 @@ angular.module('costcoop.controllers', []).
 		  		}
 
 		  		$scope.currentUser = function(items){
-		  			var list = [];
+		  			list = []
 		  		 	$scope.items.forEach(function(item){
-		  		 		
 		  		 		if(item.currentCookie == $cookies.myCookie){
 		  		 			list.push(item)
 		  		 		}
 
 		  		 	})
-		  			return list;
+		  		 	if(list.length == 0){
+		  		 		alert("have you posted before? please, tell us your name and passphrase")
+		  		 	}
+		  			return items;
 		  		}
-
-
-	  			$scope.currentItems = $scope.currentUser($scope.items)
 
 		  		$scope.toggle = function(){
 		  			this.showMe = !this.showMe;
