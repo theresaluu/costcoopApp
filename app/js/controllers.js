@@ -3,8 +3,8 @@
 /* Controllers */
 
 
-angular.module('costcoop.controllers', []).
-	controller('ItemCtrl', [
+angular.module('costcoop.controllers', [])
+	.controller('ItemCtrl', [
 	  	'$scope', 
 	  	'angularFire', 
 	  	'$cookies',
@@ -12,7 +12,6 @@ angular.module('costcoop.controllers', []).
 	  		var url = 'https://costcoop.firebaseio.com/items';
 	  		var promise = angularFire(url, $scope, 'items', []);
 	 
-
 	  		promise.then(function(){
 	  			$scope.showMe = false;
 	  			$scope.divyAccept = true;
@@ -50,7 +49,24 @@ angular.module('costcoop.controllers', []).
 
 	  		});
 		  	
-		}]);
+		}])
+	.controller('AuthCtl', ['$scope', 'angularFireAuth',
+		function($scope, angularFireAuth){
+			var url = "https://costcoop.firebaseio.com/users" + $scope.user;
+			angularFireAuth.initialize(ref, {scope: $scope, user: "name", passcode: "pass"});
+
+			var ref = new Firebase(url);
+
+			promise.then(function(){
+				$scope.logIn = function(){
+					angularFireAuth.login("facebook");
+				}
+
+				$scope.logout = function() {
+					angularFireAuth.logout();
+				}
+			});
+		}])
 
 
 

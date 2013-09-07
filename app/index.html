@@ -9,12 +9,18 @@
 </head>
 <body class="overall row-fluid">
   <h1>Cost<span class="logo">coOp</span></h1>
+  <div id="loginDiv">
+  <span ng-show="user">
+    {{user.name}} | <a href="#" ng-click="logout()">Logout</a>
+  </span>
+  <a href="#" ng-hide="user" ng-click="login()">Login</a>
+</div>
   <div data-ng-controller= "ItemCtrl"> 
     <div class="span12">
       <ul>
         <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in items">
           <div> Buy Date: {{item.date}}</div>
-          <div> Item: {{item.item}}</div>
+          <div> Item: {{item.name}}</div>
           <div> Price: ${{item.price}}</div>
           <div> Qty: {{item.qty}}</div>
           <button ng-show="!item.divied" ng-click="toggle()"> {{divyMessage}} </button>
@@ -79,7 +85,9 @@
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-cookies.js"></script>
   <script src="https://cdn.firebase.com/v0/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/0.2.0/angularfire.min.js"></script>
+  <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"/>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.js"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/0.2.0/angularfire.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
 </body>
