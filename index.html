@@ -14,7 +14,7 @@
       <ul>
         <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in items">
           <div> Buy Date: {{item.date}}</div>
-          <div> Item: {{item.item}}</div>
+          <div> Item: {{item.name}}</div>
           <div> Price: ${{item.price}}</div>
           <div> Qty: {{item.qty}}</div>
           <button ng-show="!item.divied" ng-click="toggle()"> {{divyMessage}} </button>
