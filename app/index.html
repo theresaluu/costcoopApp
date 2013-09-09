@@ -8,11 +8,31 @@
   <link rel="stylesheet" href="css/normalize.css">
 </head>
 <body class="overall row-fluid">
-  <h1>Cost<span class="logo">coOp</span></h1>
+  <div class="span4 offset4">
+    <h1>Cost<span class="logo">coOp</span></h1>
+  </div>
   <div data-ng-controller= "ItemCtrl"> 
     <div class="span12">
+      <div class="row-fluid">
+        <div class="span6 offset1">
+          <form class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label" for "text"> Search by Poster </label>
+              <div class="controls">
+                <input type="text" ng-model="search.poster">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for "text"> Search by Item </label>
+              <div class="controls">
+                <input type="text" ng-model="search.name">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
       <ul>
-        <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in items">
+        <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in items | filter:search">
           <div> Buy Date: {{item.date}}</div>
           <div> Item: {{item.name}}</div>
           <div> Price: ${{item.price}}</div>
@@ -29,7 +49,7 @@
     </div>
 
     <div class="populate row-fluid">
-      <div class="span10">
+      <div class="span3">
         <form class="form-horizontal">
           <div class="control-group">
             <label class="control-label" for "text"> Item: </label>
@@ -68,7 +88,9 @@
               <input type="text" ng-model="phone"/><br />
             </div>
           </div>
-          <button type= "submit" data-ng-click="postItem()">SAVE</button>
+          <div class="savebtn">
+              <button type= "submit" data-ng-click="postItem()">SAVE</button>
+          </div>
         </form>
       </div>
     </div>
