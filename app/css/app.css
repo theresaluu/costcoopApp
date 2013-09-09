@@ -1,6 +1,6 @@
 /* app css stylesheet */
 .overall{
-  background-color: #07499D;
+  background-color: #167A67;
   color: #002C45;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .logo{
-  color: #A92938;
+  color: #B60808;
 }
 
 .savebtn{
@@ -20,7 +20,7 @@
 }
 
 .itemdeets{
-  background-color: #A92938;
+  background-color: #CB9538;
   padding-left: 23px;
   padding-right: 23px;
   padding-top:2px;
@@ -30,7 +30,7 @@
 }
 
 .itemAccept-true{
-  background-color: #875651;
+  background-color: #0B6B13;
 }
 
 .populate{
@@ -43,10 +43,6 @@
 
 ul, li {
   list-style-type: none;
-}
-
-#avail{
-
 }
 
 .menu {

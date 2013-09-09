@@ -40,7 +40,6 @@ angular.module('costcoop.controllers', []).
 
 		  		$scope.acceptItem = function(){
 		  			this.item.divied = true;
-		  			this.item.buddy = this.item.buddy || [{acceptor: this.acceptor, phone: this.phone}];
 		  			this.phone = "";
 		  			this.acceptor = "";
 		  			this.toggle();

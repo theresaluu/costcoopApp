@@ -32,7 +32,7 @@
         </div>
       </div>
       <ul>
-        <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in items | filter:search">
+        <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in items | filter:search" enter="lightup" leave>
           <div> Buy Date: {{item.date}}</div>
           <div> Item: {{item.name}}</div>
           <div> Price: ${{item.price}}</div>
