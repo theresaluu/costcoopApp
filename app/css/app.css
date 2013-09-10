@@ -1,17 +1,18 @@
 /* app css stylesheet */
 .overall{
-  background-color: #07499D;
-  color: #002C45;
+  background-color: #282548;
+  color: #ECB031;
+  font-family: Shanti;
 }
-
+/*
 .meat{
   float: none;
   margin-left: auto;
   margin-right: auto;
-}
+}*/
 
 .logo{
-  color: #A92938;
+  color: #CA2104;
 }
 
 .savebtn{
@@ -20,7 +21,7 @@
 }
 
 .itemdeets{
-  background-color: #A92938;
+  background-color: #EE6612;
   padding-left: 23px;
   padding-right: 23px;
   padding-top:2px;
@@ -30,7 +31,7 @@
 }
 
 .itemAccept-true{
-  background-color: #875651;
+  background-color: #16364C;
 }
 
 .populate{
@@ -38,15 +39,21 @@
   margin-bottom:10px;
   margin-right: 10%;
   margin-left: 10%;
+}
 
+.lightup{
+  background-color: #ECB031;
+}
+
+.costcoop{
+  font-family: 'Cabin Sketch';
+  font-size: 80px;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 
 ul, li {
   list-style-type: none;
-}
-
-#avail{
-
 }
 
 .menu {
