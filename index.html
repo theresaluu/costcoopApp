@@ -6,35 +6,13 @@
   <link rel="stylesheet" href="css/app.css"/>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/normalize.css">
-  <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Shanti' rel='stylesheet' type='text/css'>
 </head>
 <body class="overall row-fluid">
-  <div class="span4 offset4 costcoop">
-    Cost<span class="logo">coOp</span>
-  </div>
+  <h1>Cost<span class="logo">coOp</span></h1>
   <div data-ng-controller= "ItemCtrl"> 
     <div class="span12">
-      <div class="row-fluid">
-        <div class="span6 offset1">
-          <form class="form-horizontal">
-            <div class="control-group">
-              <label class="control-label" for "text"> Search by Poster </label>
-              <div class="controls">
-                <input type="text" ng-model="search.poster">
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for "text"> Search by Item </label>
-              <div class="controls">
-                <input type="text" ng-model="search.name">
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
       <ul>
-        <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in items | filter:search" enter="lightup" leave>
+        <li id="avail" class="itemdeets itemAccept-{{item.divied}}" data-ng-repeat="item in items">
           <div> Buy Date: {{item.date}}</div>
           <div> Item: {{item.name}}</div>
           <div> Price: ${{item.price}}</div>
@@ -44,14 +22,14 @@
             <div> To split the item above, please contact: </div>
             <div> Poster: {{item.poster}} </div>
             <div> Phone: {{item.phone}} </div>
-            <button type= "submit" data-ng-click="acceptItem(item)">Finalize</button>
+            <button type= "submit" data-ng-click="acceptItem()">Finalize</button>
           </form>
         </li>
       </ul>
     </div>
 
     <div class="populate row-fluid">
-      <div class="span3">
+      <div class="span10">
         <form class="form-horizontal">
           <div class="control-group">
             <label class="control-label" for "text"> Item: </label>
@@ -90,9 +68,7 @@
               <input type="text" ng-model="phone"/><br />
             </div>
           </div>
-          <div class="savebtn">
-              <button type= "submit" data-ng-click="postItem()">SAVE</button>
-          </div>
+          <button type= "submit" data-ng-click="postItem()">SAVE</button>
         </form>
       </div>
     </div>
