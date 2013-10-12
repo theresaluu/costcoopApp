@@ -7,20 +7,33 @@ angular.module('costcoop.controllers', []).
 	controller('ItemCtrl', [
 	  	'$scope', 
 	  	'angularFire', 
-	  	'$cookies',
-	  	function($scope, angularFire, $cookies) {
-	  		var url = 'https://costcoop.firebaseio.com/items';
-	  		var promise = angularFire(url, $scope, 'items', []);
+	  	function($scope, angularFire) {
+	  		$scope.items = [];
+	  		$scope.waiting = {};
+	  		$scope.showMe = false;
+	  		$scope.divyAccept = true;
+	  		$scope.divyMessage = "Divy Accept";
+
+	  		var items = new Firebase('https://costcoop.firebaseio.com/items');
+	  		var promise = angularFire(items, $scope, 'items', []);
 	 
 
 	  		promise.then(function(){
-	  			$scope.showMe = false;
-	  			$scope.divyAccept = true;
-	  			$scope.divyMessage = "Divy Accept";
+
+	  			var waiting = new Firebase('https://costcoop.firebaseio.com/waiting');
+	  			var promise = angularFire(waiting, $scope, 'waiting', {});
+	  			
 
 	  			$scope.postItem = function(){
-	  				 if($scope.items){
-	  					$scope.items.push({name:$scope.name, qty:$scope.qty, price:$scope.price, date:$scope.date, poster: $scope.poster, phone: $scope.phone});
+	  				 if($scope.waiting){
+	  					$scope.waiting.push({
+	  						name: $scope.name, 
+	  						qty: $scope.qty, 
+	  						price: $scope.price, 
+	  						date: $scope.date, 
+	  						poster: $scope.poster, 
+	  						phone: $scope.phone
+	  					});
 	  				 }
 	  				$scope.name = '';
 		  			$scope.qty = '';
@@ -38,12 +51,19 @@ angular.module('costcoop.controllers', []).
 		  			
 		  		}
 
-		  		$scope.acceptItem = function(){
+		  		$scope.acceptItem = function(thing){
+		  			$scope.waiting.splice(thing, 1);
+		  			$scope.items.push({
+		  				name: $scope.name,
+		  				qty: $scope.qty,
+		  				price: $scope.price
+		  			});
 		  			this.item.divied = true;
 		  			this.phone = "";
 		  			this.acceptor = "";
 		  			this.toggle();
 		  			this.divyAccept = false;
+		  			
 		  	
 		  		}
 
